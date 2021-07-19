@@ -1,0 +1,34 @@
+.container {
+  position: relative;
+  padding: 60px;
+  border: solid 1px black;
+  border-radius: 15px;
+  max-width: 500px;
+  margin-top: 50px;
+  background-color: cornsilk;
+  background-image: url(https://cdn.dribbble.com/users/1133651/screenshots/2772251/1017_2_.jpg);
+}
+
+h1 {
+  font-family: "Ubuntu", sans-serif;
+  text-align: center;
+  font-weight: 700;
+}
+h3,
+h4 {
+  text-align: center;
+  font-weight: 400;
+}
+.col {
+  padding: 10px;
+  margin: 10px;
+  border: solid 2px grey;
+  border-radius: 7px;
+  text-align: center;
+  font-size: smaller;
+  font-family: "Ubuntu", sans-serif;
+}
+ul {
+  list-style: none;
+  text-align: left;
+}
