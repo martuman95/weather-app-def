@@ -17,7 +17,7 @@ maxTemp.innerHTML = Math.round(response.data.main.temp_max);
 minTemp.innerHTML = Math.round(response.data.main.temp_min);
 feelsLike.innerHTML = `${Math.round( response.data.main.feels_like )} °C`;;
 humidityElement.innerHTML = response.data.main.humidity + " %" ;
-windSpeed.innerHTML = response.data.wind.speed + " Km/h";
+windSpeed.innerHTML = Math.round(response.data.wind.speed) + " Km/h";
 }
 
 let apiKey = "f5ee6fe9739269adb6179e45323cceb3";
