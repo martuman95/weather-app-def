@@ -40,9 +40,27 @@ iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
 }
-let city = "Moscow"
+
+function search(city) {
+  
 let apiKey = "f5ee6fe9739269adb6179e45323cceb3";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-
 axios.get(apiUrl).then(dispalyTemperature);
+}
+
+function handleSubmit(event){
+event.preventDefault();
+let cityInputElement = document.querySelector("#city-input");
+console.log(cityInputElement);
+search(cityInputElement.value);
+}
+
+search("London");
+
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
+
+
+
