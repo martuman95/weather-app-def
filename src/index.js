@@ -25,6 +25,7 @@ let feelsLike = document.querySelector("#feels");
 let humidityElement = document.querySelector("#humidity");
 let windSpeed = document.querySelector("#wind");
 let dateElement =document.querySelector("#date");
+let iconElement = document.querySelector("#icon");
 
 temperatureElement.innerHTML = Math.round(response.data.main.temp) + " °C";
 cityElement.innerHTML = response.data.name;
@@ -35,11 +36,13 @@ feelsLike.innerHTML = `${Math.round( response.data.main.feels_like )} °C`;;
 humidityElement.innerHTML = response.data.main.humidity + " %" ;
 windSpeed.innerHTML = Math.round(response.data.wind.speed) + " Km/h";
 dateElement.innerHTML = formatDate(response.data.dt * 1000);
+iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 
 }
-
+let city = "Moscow"
 let apiKey = "f5ee6fe9739269adb6179e45323cceb3";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${apiKey}&units=metric`;
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 
 axios.get(apiUrl).then(dispalyTemperature);

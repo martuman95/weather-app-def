@@ -1,3 +1,6 @@
+body {
+  background-color: #fff7f3;
+}
 .container {
   position: relative;
   padding: 60px;
@@ -9,18 +12,21 @@
   background-image: url(https://cdn.dribbble.com/users/1133651/screenshots/2773833/1025_2_.jpg);
   background-position: center;
 }
-
 h1 {
   font-family: "Ubuntu", sans-serif;
   text-align: center;
-  font-weight: 700;
+  font-weight: 500;
 }
-h3,
+
 h4 {
+  font-size: 15px;
+  font-weight: 500;
   text-align: center;
-  font-weight: 400;
 }
 h3 {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
   text-transform: capitalize;
 }
 .updates {
