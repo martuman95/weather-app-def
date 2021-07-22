@@ -26,6 +26,8 @@ let windSpeed = document.querySelector("#wind");
 let dateElement =document.querySelector("#date");
 let iconElement = document.querySelector("#icon");
 
+celsTemperature = response.data.main.temp;
+
 temperatureElement.innerHTML = Math.round(response.data.main.temp);
 cityElement.innerHTML = response.data.name;
 descriptionElement.innerHTML = response.data.weather[0].description;
@@ -56,14 +58,25 @@ search(cityInputElement.value);
 
 function showFarTemperature(event){
   event.preventDefault();
+  let temperatureElement = document.querySelector("#degrees");
+let farhreneiTemp = (celsTemperature * 9) / 5 + 32;
+temperatureElement.innerHTML = Math.round(farhreneiTemp);
 }
-search("London");
 
+function showCelTemperature(event){
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#degrees");
+  temperatureElement.innerHTML = Math.round(celsTemperature);
+}
+let celsTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-let faranLink = document.querySelector("#farlink");
+let faranLink = document.querySelector("#far-link");
 faranLink.addEventListener("click", showFarTemperature);
 
+let celsLink = document.querySelector("#cels-link");
+celsLink.addEventListener("click", showCelTemperature);
 
+search("London");
