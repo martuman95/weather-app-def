@@ -1,3 +1,4 @@
+// Date display
 function formatDate(timestamp) {
 let date = new Date(timestamp);
 let hours = date.getHours();
@@ -11,6 +12,29 @@ if (minutes < 10) {
 let days = ["Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday"];
 let day = days[date.getDay()];
 return day +" " + hours + ":" + minutes;
+let day = days[time.getDay()];
+  document.querySelector(
+    "#day-time"
+  ).innerHTML = `<strong>${day}</strong> ${currentTime}`;
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let month = months[time.getMonth()];
+  let date = time.getDate();
+  let year = time.getFullYear();
+  let currentDate = `${date} ${month} ${year}`;
+  document.querySelector("#date").innerHTML = `${currentDate}`;
 }
 
 function dispalyTemperature(response) {
@@ -68,6 +92,7 @@ function showCelTemperature(event){
   let temperatureElement = document.querySelector("#degrees");
   temperatureElement.innerHTML = Math.round(celsTemperature);
 }
+
 let celsTemperature = null;
 
 let form = document.querySelector("#search-form");
