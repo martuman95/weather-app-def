@@ -13,7 +13,6 @@ let day = days[date.getDay()];
 return day +" " + hours + ":" + minutes;
 }
 
-
 function dispalyTemperature(response) {
 console.log(response.data)
 let temperatureElement = document.querySelector("#degrees");
@@ -27,7 +26,7 @@ let windSpeed = document.querySelector("#wind");
 let dateElement =document.querySelector("#date");
 let iconElement = document.querySelector("#icon");
 
-temperatureElement.innerHTML = Math.round(response.data.main.temp) + " °C";
+temperatureElement.innerHTML = Math.round(response.data.main.temp);
 cityElement.innerHTML = response.data.name;
 descriptionElement.innerHTML = response.data.weather[0].description;
 maxTemp.innerHTML = Math.round(response.data.main.temp_max);
@@ -55,12 +54,16 @@ console.log(cityInputElement);
 search(cityInputElement.value);
 }
 
+function showFarTemperature(event){
+  event.preventDefault();
+}
 search("London");
 
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-
+let faranLink = document.querySelector("#farlink");
+faranLink.addEventListener("click", showFarTemperature);
 
 

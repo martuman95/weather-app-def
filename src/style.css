@@ -4,7 +4,7 @@ body {
 .container {
   position: relative;
   padding: 60px;
-  border: solid 1px black;
+  border: solid 1px gainsboro;
   border-radius: 15px;
   max-width: 500px;
   margin-top: 50px;
